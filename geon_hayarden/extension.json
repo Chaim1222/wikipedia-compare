@@ -1,0 +1,41 @@
+{
+    "name": "GeonHayarden",
+	"author": "[https://www.hamichlol.org.il/משתמש:גאון_הירדן גאון הירדן]",
+    "version": "1.0",
+    "description": "השוואה לוויקיפדיה העברית",
+    "license-name": "MIT",
+    "type": "other",
+    "AutoloadNamespaces": {
+        "MediaWiki\\Extension\\GeonHayarden\\": "includes/"
+    },
+    "ResourceModules": {
+        "ext.geonHayarden": {
+            "scripts": [
+                "wikipeadia.js"
+            ]
+        }
+    },
+    "ResourceFileModulePaths": {
+        "localBasePath": "resources",
+        "remoteExtPath": "GeonHayarden/resources"
+    },
+    "Hooks": {
+    "BeforePageDisplay": "main",
+    "GetPreferences": "main",
+    "UserGetDefaultOptions": "main"
+},
+    "HookHandlers": {
+        "main": {
+            "class": "MediaWiki\\Extension\\GeonHayarden\\Hooks",
+            "services": [
+                "UserOptionsLookup"
+            ]
+        }
+    },
+    "MessagesDirs": {
+        "GeonHayarden": [
+            "i18n"
+        ]
+    },
+    "manifest_version": 2
+}
